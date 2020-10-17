@@ -1,0 +1,51 @@
+#getting dimension of matrix
+
+print "enter n for nxn matrix"
+n = input()
+
+matrix1 = []
+matrix2 = []
+
+#taking elements of first matrix
+
+print "Enter elements of first matrix"
+for i in range(0,n):
+
+  #taking elements of first column
+
+  print "Enter elements of ",i,"column, seperated by space"
+
+  #raw_input().split() will split the string
+  #'1 2 34'.split() will give ['1', '2', '34']
+  #map will convert its elements into integers [1, 2, 34]
+
+  matrix1.append(map(int,raw_input().split()))
+
+print "Matrix 1 is",matrix1
+
+#taking elements of second matrix
+
+print "Enter elements of second matrix"
+for i in range(0,n):
+  #Similar to input taken for 1 matrix
+
+  print "Enter elements of ",i,"column, seperated by space"
+  matrix2.append(map(int,raw_input().split()))
+
+print "Matrix 2 is",matrix2
+
+#adding
+
+add_matrix = []
+for i in range(0,n):
+  a = []
+  for j in range(0,n):
+
+
+    #making a addition matrix's column to append
+    #making a 1D matrix with elements as sum of elements of
+    #respective columns of both matrices
+
+    a.append(matrix1[i][j]+matrix2[i][j])
+  add_matrix.append(a)
+print "Addition of matrix is",add_matrix
