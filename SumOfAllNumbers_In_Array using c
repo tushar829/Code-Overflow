@@ -1,0 +1,29 @@
+ #include<studio.h>
+ #include <conio.h>
+ 
+ int sum_array(int arr[],int n,int i)
+ {
+ 	   if(i<n)
+        return arr[i]+sum_array(arr,n,++i);
+	   
+        return 0;
+ 	
+ }
+int main()
+{
+    int arr[500],i,n,sum;
+   
+    printf("Enter the size of the array : ");
+    scanf("%d", &n);
+ 
+    printf("Enter values for the array : ");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+ 
+    sum=sumofarray(arr,n,0);
+     printf("sum of all numbers in array is :%d",sum);
+ 
+    
+}
