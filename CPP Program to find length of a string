@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    string str = "abcdef";
+    int count = 0;
+    while(str[count] != '\0')
+    {
+        count++;
+    }
+    cout<<count;
+    return 0;
+}
