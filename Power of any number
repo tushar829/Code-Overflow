@@ -1,0 +1,30 @@
+import java.util.*;
+class Solution { 
+      
+    static float power(float x, int y) 
+    { 
+        float result; 
+        if( y == 0) 
+            return 1; 
+        result = power(x, y/2);  
+          
+        if (y%2 == 0) 
+            return result * result; 
+        else
+        { 
+            if(y > 0) 
+                return x * result * result; 
+            else
+                return (result * result) / x; 
+        } 
+    }  
+      
+    /* Program to test function power */
+    public static void main(String[] args) 
+    { 
+        Scanner sc= new Scanner(System.in);
+        float x = sc.nextFloat(); 
+        int y = sc.nextInt(); 
+        System.out.printf("%f", power(x, y)); 
+    } 
+} 
