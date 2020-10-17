@@ -1,0 +1,11 @@
+string=list(input())
+vowels=['A','E','I','O','U','a','e','i','o','u']
+vowel_count=0
+consonant_count=0
+for i in range(len(string)):
+  if string[i] in vowels:
+    vowel_count+=1
+  else:
+    consonant_count+=1
+print("Number of Vowels in the string",vowel_count)
+print("Number of Consonants in th string",consonant_count)
