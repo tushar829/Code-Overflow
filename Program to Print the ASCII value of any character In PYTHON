@@ -1,0 +1,4 @@
+
+character="s"        # input character
+value=ord(character)  # this function finds the ascii value
+print("The ASCII value of the given character is",value)  #o/p-115
