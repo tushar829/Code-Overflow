@@ -1,0 +1,20 @@
+#include<stdio.h>
+void main()
+
+{
+    long long int num,i,a=-1,b=1,c;
+
+    printf("Enter a number:");
+    scanf("%d",&num);
+
+    for(i=0;i<=num;i++)
+
+    {
+        c=a+b;
+        printf("%lld ",c);
+        a=b;
+        b=c;
+    }
+
+    getch();
+}
