@@ -1,0 +1,4 @@
+number=2         #given number 
+exponent=4       #given exponent
+power=2**4
+print("The result power of",number,"raised to",exponent,"is",power)
