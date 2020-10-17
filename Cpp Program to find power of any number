@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+float Calculatepower(float base, int exponent) {
+    float power = 1;
+    while (exponent != 0) {
+        power *= base;
+        --exponent;
+    }
+    return power;
+}
+
+
+int main() 
+{
+    int exponent;
+    float base;
+    cin >> base;
+    cin >> exponent;
+    float power = Calculatepower(base, exponent);
+    cout << power;   
+    return 0;
+}
