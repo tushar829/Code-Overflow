@@ -1,0 +1,9 @@
+def LargestNumber(arr):  # function to find maximum element
+    max_element=arr[0]
+    for i in arr:
+        max_element=max(max_element,i)
+    return max_element
+
+arr=[4,5,1,3,6,0,8,2]   #input array
+ans=LargestNumber(arr)
+print("Largest element is",ans)
