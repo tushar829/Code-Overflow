@@ -1,0 +1,7 @@
+lst = []
+num = int(input("Enter the size of the array: "))
+print("Enter the array elements: ")
+for n in range(num):
+  numbers = int(input())
+  lst.append(numbers)
+print("The smallest element of the given list is:", min(lst))
