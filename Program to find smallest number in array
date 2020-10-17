@@ -1,0 +1,17 @@
+public class Smallest{
+
+    public static void main(String[] args) {
+        
+        
+        int[] numFirstArray = { 3,6,8,9,6,2};
+        
+        int smallest = numFirstArray[0];
+
+        for (int num: numFirstArray) {
+            if(smallest > num)
+                smallest = num;
+        }
+
+        System.out.format("Smallest element in array : "+ smallest);
+    }
+}
