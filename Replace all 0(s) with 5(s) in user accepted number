@@ -1,0 +1,8 @@
+number = input('Enter a number: ')
+lis = [int(digit) for digit in number]
+for i in lis:
+  if i == 0:
+    i = 5
+    print(i, end="")
+  else:
+    print(i, end="")
