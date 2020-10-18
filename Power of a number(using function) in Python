@@ -1,0 +1,6 @@
+def pwr(x,n):
+    ans=x**n
+    return ans
+    
+x, n = [int(x) for x in input().split()]
+print(pwr(x,n))
