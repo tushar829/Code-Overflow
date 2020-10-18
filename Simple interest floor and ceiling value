@@ -1,0 +1,10 @@
+import math
+p=3500
+r=3.15
+t=2.5
+interest=((p*t*r)/100)
+print("The interest is",round(interest))
+ceil=math.ceil(interest)
+print("The celing value is",ceil)
+floor=math.floor(interest)
+print("The floor value is",floor)
