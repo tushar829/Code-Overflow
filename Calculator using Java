@@ -1,0 +1,47 @@
+package practice;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.lang.Math.*;
+class Calculation{
+	public int add(int a, int b) {
+		return a+b;
+	}
+	
+	public int sub(int a, int b) {
+		if(a>b) {
+			return a-b;
+		}else {
+			return b-a;
+		}
+	}
+	public int mul(int a, int b) {
+		return a*b;
+	}
+	public int div(int a, int b) {
+		if(a>b) {
+			return a/b;
+		}else {
+			return b/a;
+		}
+	}
+}
+
+
+
+public class solution {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc = new Scanner(System.in);
+Calculation cal = new Calculation();
+int x =sc.nextInt();
+int y=sc.nextInt();
+int add = cal.add(x,y );
+int sub = cal.sub(x, y);
+int mul=cal.mul(x, y);
+int div=cal.div(y, x);
+
+System.out.println("add is "+add+" sub is "+sub+"mul is "+mul+" div is "+div);
+}
+
+}
