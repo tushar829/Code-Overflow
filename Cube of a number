@@ -1,0 +1,15 @@
+import java.util.*;
+class Cube
+{
+public static void main(String args[])
+{
+int i,num,sq;
+for(i=1;i<10;i++)
+{
+num=i*i*i;
+sq=(int)Math.sqrt(num);
+if(sq*sq==num)
+System.out.print(num);
+}
+}
+}
