@@ -1,0 +1,22 @@
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+int i, n , arr[20], small=1234, pos = -1;
+clrscr();
+
+printf("\n Enter the number of elements in the array; ");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+ {
+  if(arr[i]<small)
+   {
+    small=arr[i];
+    pos=i;
+    }
+   } 
+ printf("\n The smallest of element is : %d " , small);
+ printf("\n The position of the smallest number in the array is : %d", pos);
+ return 0;
+}
