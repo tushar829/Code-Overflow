@@ -1,0 +1,24 @@
+#code
+#enter the values
+print("Input lengths of the triangle sides: ")
+x = int(input("x: "))
+y = int(input("y: "))
+z = int(input("z: "))
+
+#providing the conditions
+if x == y == z:
+	print("Equilateral triangle")
+elif x==y or y==z or z==x:
+	print("Isosceles triangle")
+else:
+	print("Scalene triangle")
+  
+#output
+x: 6                                                                                                          
+y: 8                                                                                                          
+z: 12                                                                                                         
+Scalene triangle  
+x: 7                                                                                                         
+y: 7                                                                                                          
+z: 7                                                                                                         
+Equilateral triangle  
