@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+    int base, exp;
+    long long pow = 1;
+    int i;
+
+    
+    printf("Enter base: ");
+    scanf("%d", &base);
+    printf("Enter exponent: ");
+    scanf("%d", &exp);
+
+    
+    for(i=1; i<=exp; i++)
+    {
+        power = pow*base;
+    }
+
+    printf("%d ^ %d = %lld", base, exp, pow);
+
+    return 0;
+}
