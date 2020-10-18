@@ -1,0 +1,3 @@
+inp = str(input("Enter the character  "))
+
+print(f"ASCII value of {inp} is "+str(ord(inp)))
