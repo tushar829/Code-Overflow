@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+long long binaryToDecimal(string str)
+{
+    int sum = 0;
+    int b = 1;
+    
+    for (int i = str.length() - 1; i >= 0; i--) {
+        if (str[i] == '1')
+            sum += b;
+        b = b * 2;
+    }
+    return sum;
+}
+
+int main()
+{
+    cout<<binaryToDecimal("111");
+    return 0;
+}
