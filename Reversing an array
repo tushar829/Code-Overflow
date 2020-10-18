@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int numOfElements;
+    cin >> numOfElements;
+    int arr[numOfElements];
+    for(int i = 0; i < numOfElements; i++)
+        cin >> arr[i];
+    for(int i = 0; i < numOfElements/2; i++)
+    {
+        swap(arr[i], arr[numOfElements-i-1]);
+    }
+    for(int i = 0; i < numOfElements; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
