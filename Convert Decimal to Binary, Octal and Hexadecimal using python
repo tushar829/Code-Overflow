@@ -1,0 +1,14 @@
+#convert decimal to binary,octal, hexadecimal
+#taking user input
+
+decimal = int(input("Enter Decimal Value: \n"))
+convert = int(input("Convert into: [1] Binary, [2] Octal, [3] Hexadecimal: "))
+
+if convert == 1:
+    print("Binary valure is \n",bin(decimal))
+elif convert == 2:
+    print("Octal valure is \n",oct(decimal))
+elif convert == 3:
+    print("Hexadecimal Value is \n",hex(decimal))
+else:
+    print("Invalid Input")
