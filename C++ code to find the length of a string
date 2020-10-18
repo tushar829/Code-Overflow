@@ -1,0 +1,14 @@
+// C++ code to count the length of a string
+#include<iostream>
+#include<string.h>
+using namespace std;
+int main ()
+{
+    char str[50];
+    int len;
+    cout << "Enter an array or string : ";
+    gets(str);
+    len = strlen(str);
+    cout << "Length of the string is : " << len;
+    return 0;
+}
