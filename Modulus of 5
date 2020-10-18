@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long int ll;
+ll e = 1e9+7;
+ll check(ll x)
+{
+    ll sum=0;
+    while(x!=0)
+    {
+        sum=sum+ x%10;
+        x=x/10;
+    }
+    
+    if(sum%5==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+    
+}
+int main() {
+    ll n,k;
+    cin>>n;
+    cin>>k;
+    ll i = n+1;
+    ll count=1;ll answer ;
+    while(count<=k)
+    {
+        ll ram=check(i);
+        if(ram==1)
+        {
+            count++;
+            answer = i ; 
+        }
+        
+        
+        i++;
+    }
+    cout<<answer%e;
+}
