@@ -1,0 +1,25 @@
+import java.util.*;
+import java.lang.*;
+
+class power {
+    
+     static long power(long x,long y) 
+    { 
+        long temp; 
+        if( y == 0) 
+        return 1; 
+        temp = power(x, y/2); 
+        if (y%2 == 0) 
+        return temp*temp; 
+        else
+        return x*temp*temp; 
+    } 
+    
+	public static void main (String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    long a=sc.nextLong();
+	    long b=sc.nextLong();
+	    System.out.println(power(a,b));
+		
+	}
+}
