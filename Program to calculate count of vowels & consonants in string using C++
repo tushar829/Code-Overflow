@@ -1,0 +1,12 @@
+##Program to calculate count of vowels & consonants in string
+main(){
+int n,vov=0,con=0;
+string s;
+cin>>s;
+n=s.length();
+for(int i=0;i<n;i++){
+if((s[i]=='a')||(s[i]=='e')||(s[i]=='i')||(s[i]=='o')||(s[i]=='u')||(s[i]=='A')||(s[i]=='E')||(s[i]=='I')||(s[i]=='O')||(s[i]=='U')){
+vov++;}
+else 
+{con++;}}
+cout<<"Number of Vowels in string are "<<vov<<" And number of Consonents are "<<con;} 
