@@ -1,0 +1,12 @@
+##Program to count sum of all numbers in array
+main(){
+int n;
+cout<<"Enter the length of array";
+cin>>n;
+int s[n];
+for(int j=0;j<n;j++){
+cin>>s[j];}
+long long int sum=0;
+for(int i=0;i<n;i++){
+sum+=s[i];}
+cout<<sum;}
