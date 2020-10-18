@@ -1,0 +1,71 @@
+import cv2
+import time
+import numpy as np
+
+#recording video from webcam
+
+camera=cv2.VideoCapture(0)
+#For final outcome
+frame_width = int(camera.get(3))
+frame_height = int(camera.get(4))
+
+out =cv2.VideoWriter('output.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (frame_width,frame_height))
+#time for webcamera to sleep(5s) before it works 
+
+time.sleep(5)
+count=0
+background=0
+
+#capturing background which will work as invisible cloak
+        
+for i in range(60):
+  ret,background=camera.read()
+
+background =np.flip(background,axis=1)  
+
+# reading the frame from camera, till it is open
+
+while(camera.isOpened()):
+  ret,img=camera.read()
+  if not ret:
+    break
+  count+=1
+  # laterally flipping the image
+  img=np.flip(img,axis=1)  
+  # converting RGB to HSV
+  hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
+  # Generating mask to detect Red Color
+  #Range for Lower Red
+  lower_red=np.array([0,125,50])
+  upper_red=np.array([10,255,255])
+  mask1=cv2.inRange(hsv,lower_red,upper_red)
+
+  #Range for Upper Red
+  lower_red=np.array([170,120,70])
+  upper_red=np.array([180,255,255])
+  mask2=cv2.inRange(hsv,lower_red,upper_red)
+  mask1 = mask1+mask2
+
+  mask1 = cv2.morphologyEx(mask1, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8)) 
+  #Dilate the mask image
+  mask1=cv2.morphologyEx(mask1,cv2.MORPH_DILATE,np.ones((3,3),np.uint8))
+
+  # Creating an inverted Mask to segment out the red color from the image
+  mask2=cv2.bitwise_not(mask1)
+
+  # Segmenting the cloth out of the frame using bitwise and inverted mask
+  res1=cv2.bitwise_and(img,img,mask=mask2)
+
+  # Creating image showing static background pixels by pixels only for the masked region
+  res2=cv2.bitwise_and(background,background,mask=mask1)
+
+ #Generating final output
+
+  op=cv2.addWeighted(res1,1,res2,1,0)
+  out.write(op)
+  cv2.imshow("ABRACADABRA",op)
+  cv2.waitKey(1)
+
+camera.release()
+out.release()
+cv2.destroyAllWindows()  
