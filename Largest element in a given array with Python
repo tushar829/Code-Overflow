@@ -1,0 +1,13 @@
+#compose array
+arrays = [31, 9, 18, 92, 47, 20]
+
+#compose with the highest first element in array
+max = arrays[0];
+
+#loop through
+for i in range(0, len(arrays)):
+    #compare max with other element in array
+    if(arrays[i] > max):
+        max = arrays[i];
+        
+print("Largest element in the array: " + str(max));
