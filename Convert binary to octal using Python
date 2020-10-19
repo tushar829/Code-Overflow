@@ -1,0 +1,12 @@
+# Python Program - Convert Binary to Octal
+
+print("Enter 'x' for exit.");
+
+binary_num = input("Input a Binary number: ");
+
+if binary_num == 'x':
+    exit();
+else:
+    temp = int(binary_num, 2);
+    
+    print(binary_num,"in Octal =",oct(temp));
