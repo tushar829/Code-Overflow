@@ -1,0 +1,12 @@
+public class lengthStr{
+
+     public static void main(String []args){
+        String s="Programming is Fun";
+        int length;
+
+        //finding length
+        length=s.length();
+        System.out.println("Length of String="+length);
+     }
+    
+}
