@@ -1,0 +1,12 @@
+// CPP program to print 
+// ASCII Value of Character 
+#include <iostream> 
+using namespace std; 
+int main() 
+{ 
+    char char;
+    cout<<"Enter a character: ";
+    cin>>char;
+    cout << "The ASCII value of " << char << " is " << int(char); 
+    return 0; 
+} 
