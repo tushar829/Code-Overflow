@@ -1,0 +1,10 @@
+from array import *
+
+items_in_array = array('i', [2, 4, 6, 4, 7, 1, 8, 4])
+
+print("Main array: "+str(items_in_array))
+
+items_in_array.reverse()
+
+print("Reversed order of the items in array:")
+print(str(items_in_a
