@@ -1,0 +1,15 @@
+vowel_str = 0
+consonant_str = 0
+str = input("Please enter a string of your choice")
+
+for i in str:
+    if(i == 'A' or i == 'a' or i == 'E' or i == 'e' or i == 'I'
+       or i == 'i' or i == 'O' or i == 'o' or i == 'U' or i == 'u'):
+        #the vowel counter is incremented with 1
+        vowel_str = vowel_str + 1;
+    else:
+        #The consonant counter is incremented with 1
+        consonant_str = consonant_str + 1;
+            
+print("The number of vowel: ", vowel_str);
+print("The number of Consonants:, ", consonant_str);
