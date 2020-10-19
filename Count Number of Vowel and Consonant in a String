@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{
+   string s;
+   ll vowel=0,consonant=0;
+   cin>>s;
+   for(ll i = 0;s[i]!='\0';i++) {
+      if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u' || s[i]=='A' || s[i]=='E' || s[i]=='I' || s[i]=='O' || s[i]=='U')
+      {
+         vowel++;
+      }
+      else if((s[i]>='a'&& s[i]<='z') || (s[i]>='A'&& s[i]<='Z'))
+      {
+         consonant++;
+      }
+   }
+   cout<<"Vowels="<<vowel<<endl;
+   cout<< "Consonants="<<consonant<<endl;
+   return 0;
+}
