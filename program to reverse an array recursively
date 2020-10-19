@@ -1,0 +1,11 @@
+def rev(A, start, end):
+    if start >= end:
+        return
+    A[start], A[end] = A[end], A[start]
+    reverseList(A, start+1, end-1)
+    
+#test code
+A = [11, 2, 4, 10, 8, 6]
+print(A)
+rev(A, 0, 5)
+print(A)
