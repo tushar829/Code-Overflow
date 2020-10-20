@@ -1,0 +1,15 @@
+#include<iostream.h>
+using namespace std;
+
+int main()
+{
+    int n, f=1;
+    cout<<"enter the number ";
+    cin>>n;
+    for(int i = 1; i<=n; i++)
+        f *= i;
+
+    cout<<"factorial of number "<<n<<" is "<<f;
+
+    return 0;
+}
