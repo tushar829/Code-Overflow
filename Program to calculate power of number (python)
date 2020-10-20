@@ -1,0 +1,4 @@
+base = int(input("Enter your number : "))
+pw = int(input("Enter the power : "))
+
+print(f"The power on number {base} = ", (base ** pw))
