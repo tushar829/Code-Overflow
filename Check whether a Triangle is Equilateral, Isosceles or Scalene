@@ -1,0 +1,14 @@
+#include <bits/stdc++.h> 
+using namespace std; 
+void checkTriangle(int x, int y, int z) 
+{ 
+
+	if (x == y && y == z) 
+		cout << "Equilateral Triangle"; 
+
+	else if (x == y || y == z || z == x) 
+		cout << "Isoceles Triangle"; 
+
+	else
+		cout << "Scalene Triangle"; 
+}
