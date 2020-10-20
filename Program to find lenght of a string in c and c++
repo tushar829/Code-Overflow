@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main() {
+    char s[] = "Programming is fun";
+    int i;
+
+    for (i = 0; s[i] != '\0'; ++i);
+    
+    printf("Length of the string: %d", i);
+    return 0;
+}
+
+
+
+
+In c++
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string str = "C++ Programming";
+
+    // you can also use str.length()
+    cout << "String Length = " << str.size();
+
+    return 0;
+}
