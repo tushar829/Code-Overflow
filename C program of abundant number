@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+      //initialization variables
+       int number,sum=0,c;
+     //input from user
+     printf("Enter a number : "); 
+      scanf("%d",&number);
+    //declare a variable to store sum of factors of the number
+     for(c = 1 ; c < number ; c++)
+     {
+           if(number % c == 0)
+              //sum+=c;
+               sum = sum + c;
+     }
+     if(sum > number)
+          //display the result
+           printf("Abundant Number");
+     else
+       //display  
+         printf("Not an Abundant Number");
+
+    return 0;
+}
