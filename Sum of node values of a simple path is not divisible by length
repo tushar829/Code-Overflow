@@ -1,0 +1,86 @@
+#include<iostream>
+#include<set>
+#include<stack>
+#include<cmath>
+#include<queue>
+#include<vector>
+#include<map>
+#include<unordered_map>
+#define ll long long 
+#define pi acos(-1)
+using namespace std;
+long long gcd(long long int a, long long int b)
+{
+  if (b == 0)
+    return a;
+  return gcd(b, a % b);
+}
+long long lcm(int a, int b)
+{
+    return (a / gcd(a, b)) * b;
+}
+void bfs(vector<vector<int> > adj,int arr[])
+{
+  int n=adj.size();
+  bool vis[n];
+  for(int i=0;i<n;i++)
+  {
+    vis[i]=false;
+    arr[i]=-1;
+  }
+  arr[0]=1;
+  vis[0]=true;
+  queue<int>q;
+  q.push(0);
+  while(!q.empty())
+  {
+    int u=q.front();
+    q.pop();
+    for(int i=0;i<adj[u].size();i++)
+    {
+      if(vis[adj[u][i]]==false)
+      {
+          vis[adj[u][i]]=true;
+          arr[adj[u][i]]=arr[u]+1;
+          q.push(adj[u][i]);
+      }
+    }
+  }
+  for(int i=0;i<n;i++)
+  {
+    if(arr[i]%2==1)
+    {
+      cout<<1<<" ";
+    }
+    else
+    {
+      cout<<2<<" ";
+    }
+  }
+  cout<<endl;
+}
+void solve()
+{
+  int n;
+  cin>>n;
+  vector<vector<int> >adj(n);
+  for(int i=0;i<n-1;i++)
+  {
+    int u,v;
+    cin>>u>>v;
+    adj[u-1].push_back(v-1);
+    adj[v-1].push_back(u-1);
+  }
+  int arr[n];
+  bfs(adj,arr);
+}
+int main()
+{
+  int t;
+  cin>>t;
+  // t=1;
+  while(t--)
+  {
+    solve();
+  }
+}
