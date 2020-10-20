@@ -1,0 +1,42 @@
+#include<bits/stdc++.h> 
+using namespace std; 
+double PHI = 1.6180339; 
+long long  f[6] = { 0, 1, 1, 2, 3, 5 }; 
+long long  fib (long long  n) 
+{ 
+    // Fibonacci numbers for n < 6 
+    if (n < 6) 
+        return f[n]; 
+  
+    // Else start counting from  
+    // 5th term 
+    long long  t = 5, fn = 5; 
+  
+    while (t < n) { 
+         fn = round(fn * PHI); 
+         t++; 
+    } 
+  
+    return fn;    
+} 
+int   main() 
+{
+	long long t;
+	cin>>t;
+   while(t--)
+	{
+		long long n,p;
+		cin>>n;
+        	n = n| (n>>1);
+        	n = n| (n>>2);
+        	n = n| (n>>4);
+        	n = n| (n>>8);
+        	n = n| (n>>16);
+        	n = n| (n>>32);
+        	n = n| (n>>60);
+            p=(n+1)>>1;
+		p%=60;
+		long long  m=fib(p-1)%10;
+		cout<<m<<endl;
+}
+} 
