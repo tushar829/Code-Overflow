@@ -1,0 +1,9 @@
+low = int(input("Enter the low range: "))
+high = int(input("Enter the high range: "))
+for x in range(low,high+1):
+  if x>1:
+    for i in range(2,x):
+      if(x%1) == 0:
+        break
+      else:
+        print(x)
