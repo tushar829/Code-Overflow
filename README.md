@@ -7,7 +7,7 @@ Awesome Open Source Coding Problems
 #### You can select any problem statement as per your programming skill levels
 #### You can use ANY programming language to solve these problems
 
-## Steps To Contribute to This Repo
+## Steps To Contribute to This Repo:
 #### 1. Create New File (press "add new file" button)
 #### 2. Name this file as your problem statement
 #### 3. Add Your Code
@@ -16,7 +16,7 @@ Awesome Open Source Coding Problems
 
 # Problem Statements 
 
-## Easy (recommended for beginners)
+## Easy (recommended for beginners):
 
 1. Program to find factorial of number
 2. Program to find largest element in array
@@ -26,7 +26,7 @@ Awesome Open Source Coding Problems
 6. Program to print leap years in given range
 7. Program to count sum of all numbers in array
 
-## Medium (recommended for intermidiate)
+## Medium (recommended for intermidiate):
 
 1. Program to calculate count of vowels & consonants in string
 2. Program to add 2D or 3D Matrices
