@@ -1,0 +1,79 @@
+# Implement a frequency chart function to include a graphical representation of the mean.
+
+import turtle
+import random
+
+
+
+def frequencyChart(aList):
+	countDict = {}
+	aList.sort()
+	for item in aList:
+		if item in countDict:
+			countDict[item] += 1
+		else:
+			countDict[item] = 1
+			
+	itemlist = list(countDict.keys())
+	minitem = 0
+	maxitem = len(itemlist) - 1
+	
+	countlist = countDict.values()
+	maxcount = max(countlist)
+	
+	wn = turtle.Screen()
+	chartT = turtle.Turtle()
+	wn.setworldcoordinates(-1, -1, maxitem+1, maxcount+1)
+	chartT.hideturtle()
+	
+	chartT.up()
+	chartT.goto(0,0)
+	chartT.down()
+	chartT.goto(maxitem,0)
+	chartT.up()
+	
+	chartT.goto(-1,0)
+	chartT.write("0", font=("Helvetica", 16, "bold"))
+	chartT.goto(-1, maxcount)
+	chartT.write(str(maxcount), font=("Helvetica", 16, "bold"))
+	
+	for index in range(len(itemlist)):
+		chartT.goto(index,-1)
+		chartT.write(str(itemlist[index]), font=("Helvetica", 16, "bold"))
+		
+		chartT.goto(index,0)
+		chartT.down()
+		chartT.goto(index,countDict[itemlist[index]])
+		chartT.up()
+	
+	# Charting for the mean value provided here
+	mn = sum(aList) / len(aList)
+	print(f"Mean is: {mn}")
+	chartT.goto(mn,-1)
+	chartT.write(str(mn), font=("Helvetica", 16, "bold"))
+	
+	chartT.goto(mn,0)
+	chartT.down()
+	chartT.goto(mn,mn)
+	chartT.up()
+		
+	wn.exitonclick()
+	return
+	
+	
+def main():
+	# Generate and populate a list.
+	tList = []
+	for x in range(20):
+		val = random.randint(1,10)
+		tList.append(val)
+	
+	print(tList)
+	frequencyChart(tList)
+	
+	
+main()
+		
+	
+	
+	
