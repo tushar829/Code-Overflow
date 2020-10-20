@@ -1,0 +1,229 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+	int info;
+	struct node *next;
+};
+typedef struct node NODE;
+int val, delement,found;
+NODE *now, *first, *temp, *pred;
+//pred=preceding node
+
+
+void display()
+{
+	temp=first;
+	printf("\nCurrent linked list is:\n\n");
+	while(temp!=0)
+	{
+		printf("%d => ",temp->info );
+		temp=temp->next;
+	}
+	printf("NULL.\n\n");
+}
+void instart()
+{
+	NODE *now=(NODE*)malloc(sizeof(NODE));
+	temp=first;
+	printf("Enter element to be inserted at start: ");
+	scanf("%d",&now->info);
+	now->next=temp;
+	first=now;
+	display();
+}
+void insend()
+{
+	NODE *now=(NODE*)malloc(sizeof(NODE));
+	printf("Enter element to be inserted at end: ");
+	scanf("%d", & now->info);
+	temp=first;
+	while(temp->next!=0)
+	{
+		temp=temp->next;
+		if(temp->next==0)
+		{
+			temp->next=now;
+			now->next=0;
+			break;
+		}
+
+	}
+	display();
+}
+void insertat()
+{
+	NODE *now=(NODE*)malloc(sizeof(NODE));
+	int val,posn,pos=1;
+	printf("Enter element to be inserted and its position: ");
+	scanf("%d %d",& val,& posn);
+	now->info=val;
+	temp=first;
+	while(temp!=0)
+	{
+		if(pos==posn-1)
+		{
+			now->next=temp->next;
+			temp->next=now;
+			break;
+		}
+		else
+		{
+			temp=temp->next;
+			pos++;
+		}
+	}
+	display();
+}
+void delstart()
+{
+	temp=first;
+	first=first->next;
+	free(temp);
+	display();
+}
+void delend()
+{
+	pred=first;
+	while(pred->next!=0)
+	{
+		temp=pred->next;
+		if(temp->next==0)
+		{
+			pred->next=0;
+			free(temp);
+		}
+		pred=pred->next;
+	}
+	display();
+}
+void deleteat()
+{
+	found=0;
+	printf("Type element value to be deleted:");
+	scanf("%d",& delement);
+	pred=first;
+	while(pred->next!=0)
+	{
+		if(pred->next->info==delement)
+		{
+			temp=pred->next;
+			pred->next=temp->next;
+			free(temp);
+			found=1;
+			break;
+		}
+		pred=pred->next;
+	}
+	if(found==0)
+		printf("Element not found.");
+	display();
+}
+void search()
+{
+	int val,f=0,pos=1;
+	temp=first;
+	printf("Enter element whose position is required: ");
+	scanf("%d",& val);
+	while(temp!=0)
+	{
+		if(temp->info==val)
+		{
+			printf("The element %d is in %d position.\n", val, pos);
+			f=1;
+			break;
+		}
+		else
+		{
+			temp=temp->next;
+			pos++;
+		}
+	}
+	if(f==0)
+		printf("Element not found.");
+	display();
+}
+void main()
+{
+	int choice;
+	first=0;
+	printf("First create a linked list.\n\n");
+	while(1)
+	{
+		now=(NODE*)malloc(sizeof(NODE));
+		printf("Enter new element or -1 to exit:  ");
+		scanf("%d",& val);
+		if(val==-1)
+			break;
+		now->info=val;
+		if(first!=0)
+		{
+			temp->next=now;
+			temp=now;
+		}
+		else
+			first=temp=now;
+	}
+	temp->next=0;
+	//Display Linked List
+	temp=first;
+	printf("\nCurrent linked list is:\n\n");
+	while(temp!=0)
+	{
+		printf("%d => ",temp->info );
+		temp=temp->next;
+	}
+	printf("NULL.\n\n");
+	do
+	{
+		printf("Choose from the given options:\n1.Insert element at start.\n2.Insert element at end.\n3.Insert element at a particular position.\n4.Delete first element.\n5.Delete last element.\n6.Delete particular element.\n7.Search for an element.\n0.Exit. :");
+		scanf("%d",& choice);
+		switch(choice)
+		{
+		case 0:
+			break;
+		case 1:
+		{
+			instart();
+			break;
+		}
+		case 2:
+		{
+			insend();
+			break;
+		}
+		case 3:
+		{
+			insertat();
+			break;
+		}
+		case 4:
+		{
+			delstart();
+			break;
+		}
+		case 5:
+		{
+			delend();
+			break;
+		}
+		case 6:
+		{
+			deleteat();
+			break;
+		}
+		case 7:
+		{
+			search();
+			break;
+		}
+		default:
+		{
+			printf("Option unavailable! Re-enter.");
+			scanf("%d", & choice);
+			break;
+		}
+	}
+	}
+	while(choice!=0);
+}
