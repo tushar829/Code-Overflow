@@ -1,0 +1,19 @@
+import java.io.*;
+class triangle
+{
+public static void main(String args[])throws IOException
+{
+int a,b,c;
+BufferedReader zm=new BufferedReader(new InputStreamReader (System.in));
+System.out.println(“Enter three sides of a  triangle”);
+a=Integer.parseInt(zm.readLine());
+b=Integer.parseInt(zm.readLine());
+c=Integer.parseInt(zm.readLine());
+if(a==b && b==c && c==a)                          //Equilateral triangle – three sides are equal
+System.out.println(“it is an equilateral triangle”);
+else if(a==b||b==c||c==a)                       //Isoceles triangle  –  any two sides are equal
+System.out.println(“it is an isoceles triangle”);
+else
+System.out.println(“it is a scalene triangle”);
+}
+}
