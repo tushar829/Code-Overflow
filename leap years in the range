@@ -1,0 +1,25 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+	int startYear, endYear, i;
+
+	cout<<"To print leap years between two given years"<<endl;
+
+    cout<<"Enter start year:";
+    cin>>startYear;
+
+    cout<<"Enter end year:";
+    cin>>endYear;
+
+
+	for(i=startYear; i <= endYear; i++){
+
+		if( ((i%4 == 0) && (i % 100 != 0) )|| (i % 400 == 0) ){
+			cout<<i<<endl;
+		}
+	}
+
+    return 0;
+}
