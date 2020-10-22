@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
  
+ // Program to print number of primes between two numbers
+ 
 void main()
 {
     int num1, num2, i, j, flag, temp, count = 0;
