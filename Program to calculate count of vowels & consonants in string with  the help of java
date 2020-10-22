@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class vowel_count {
+   public static void main(String[] args) {
+        // TODO code application logic here
+        int count_vowel = 0;
+        int count_constants = 0;
+        
+        Scanner sc = new Scanner(System.in);
+        String abc = sc.nextLine();
+        for(int i=0; i<abc.length(); i++){
+             
+            if(abc.charAt(i) == 'a' || abc.charAt(i) == 'e' || abc.charAt(i) == 'i' || abc.charAt(i) == 'o' || abc.charAt(i) == 'u') {
+                count_vowel++;    
+            }    
+           
+            else if(abc.charAt(i) >= 'a' && abc.charAt(i)<='z') {
+                count_constants++;    
+            }    
+        }    
+        System.out.println("Number of vowels: " + count_vowel);    
+        System.out.println("Number of consonants: " + count_constants);    
+    }
+}
