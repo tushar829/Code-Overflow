@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<stdlib.h>
+float sum(float a, float b);
+float sub(float a, float b);
+float mul(float a, float b);
+float divi(float a, float b);
+int mod(int c, int e);
+
+int main(){
+    int c=0,e=0,tmp=0;
+float a=0,b=0,temp=0;
+int ch;
+printf("\n1.Add\n2.subtract\n3.multiply\n4.divide\n5.mod\n6.exit\n");
+while(1){
+printf("Enter your choice:\n");
+scanf("%d", &ch);
+switch(ch){
+          case 1:
+          printf("enter the numbers to be added:");
+          scanf("%f, %f", &a,&b);
+          temp=sum(a,b);
+          printf("The sum is=%f", temp);
+          break;
+          case 2:
+          printf("enter the numbers to be subtracted:");
+          scanf("%f, %f", &a,&b);
+          temp=sub(a,b);
+          printf("The subtraction=%f", temp);
+          break;
+          case 3:
+          printf("enter the numbers to be multiplication:");
+          scanf("%f, %f", &a,&b);
+          temp=mul(a,b);
+          printf("The product is=%f", temp);
+          break;
+          case 4:
+          printf("enter the numbers to be divided:");
+          scanf("%f, %f", &a,&b);
+          temp=divi(a,b);
+          printf("The divided sum is=%f", temp);
+          break;
+          case 5:
+          printf("enter the numbers to be modulus:");
+          printf("caution enter whole numebers only:");
+          scanf("%d, %d", &c,&e);
+          tmp=mod(c,e);
+          printf("The sod is=%d", tmp);
+          break;
+          case 6:
+          exit(0);
+          break;
+          }
+}
+
+return 0;
+}
+
+float sum(float a, float b){
+a=a+b;
+return (a);
+}
+float sub(float a, float b){
+a=a-b;
+return (a);
+}
+float mul(float a, float b){
+a=a*b;
+return (a);
+}
+float divi(float a, float b){
+a=a/b;
+return (a);
+}
+int mod(int c, int e){
+c=c%e;
+return (c);
+}
