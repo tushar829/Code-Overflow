@@ -10,7 +10,11 @@ class fibonacci
        
     public static void main (String args[]) 
     { 
-    int n = 9; 
+        System.out.println("Enter numbers");
+        
+        Scanner in = new Scanner(System.in);
+        
+       int n = in.nextInt();
     System.out.println(fib(n)); 
     } 
 } 
