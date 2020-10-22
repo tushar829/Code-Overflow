@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int Ar[100],size,i,largest;
+	printf("Enter the size of the array: ");
+	scanf("%d",&size);
+	printf("\nEnter the array elements : ");
+	for(i=0;i<size;i++)
+	{
+		scanf("%d",&Ar[i]);
+		if(i==0)
+		  largest=Ar[i];
+		else if(Ar[i]>largest)
+		  largest=Ar[i];
+		  
+	}
+	printf("\nThe largest element in the array is: %d",largest);
+	return 0;
+}
