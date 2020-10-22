@@ -1,0 +1,22 @@
+   public class Main
+{
+	public static void main(String[] args) {
+
+        int arr[] = {11,22,33,44,55,66,77,88,99,100};
+        int len = arr.length;
+        int low = 0;
+        int high = len-1;
+        while(low<high){
+            int temp = arr[low];
+            arr[low] = arr[high];
+            arr[high] = temp;
+            low++;
+            high--;
+        }
+            System.out.println("Reverse of an array ");
+        for(int i=0;i<len;i++) 
+        System.out.print(arr[i]+" ");
+}}
+Output
+Reverse of an array 
+100 99 88 77 66 55 44 33 22 11

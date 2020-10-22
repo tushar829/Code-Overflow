@@ -1,0 +1,15 @@
+  public class Main
+{
+	public static void main(String[] args) {
+	int arr[]={35,23,-11,78,-90,50,56,33,40};//Initialising array
+	int max=arr[0];//assining value to max variable
+	for(int i=0;i<arr.length;i++)
+	{
+	    if(max<arr[i])
+	    max=arr[i];
+	}
+	System.out.println("Maximum Number Found in array is "+max);//printing maximum in array
+	}
+}
+Output:-
+Maximum Number Found in array is 78

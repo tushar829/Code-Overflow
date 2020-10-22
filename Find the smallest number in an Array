@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+ll solution(ll n)
+{
+    cout<<"Enter array elements\n";
+    ll minimum, temp;
+    cin>> minimum;  n--;
+    while (n--)
+    {
+        cin>>temp;
+        minimum = min(minimum, temp);
+    }
+    return minimum;
+}
+
+int main()
+{
+    cout<<"Enter the size of array\n";
+    ll n;   cin>>n;
+    {
+        cout<<solution(n)<<"\n";
+    }
+    return 0;
+}

@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+ll solution(ll n)
+{
+    int decimalNumber = 0, i = 0, remainder;
+    while (n!=0)
+    {
+        remainder = n%10;
+        n /= 10;
+        decimalNumber += remainder*pow(2,i);
+        ++i;
+    }
+    return decimalNumber;
+}
+
+int main()
+{
+    ll n;
+    cout << "Enter the binary number";
+    cin >> n;
+    cout <<"Decimal of "<<n<<" is "<<solution(n);
+    return 0;
+}

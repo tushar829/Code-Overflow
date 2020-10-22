@@ -1,0 +1,19 @@
+a=input("enter the first number: ")
+b=input("enter the second number: ")
+c=input("add=1, subtract=2, multiply=3, divide=4: ")
+d=int(c)
+e=int(a)
+f=int(b)
+if 0.9<d<1.1:
+    print(e+f)
+elif 1.9<d<2.1 :
+    print(e-f)
+elif 2.9<d<3.1 :
+    print(e*f)
+elif 3.9<d<4.1 :
+    print(e/f)   
+else :
+    print("select from 1,2,3,4")      
+              
+print("thank you")
+input("press enter to close:")
