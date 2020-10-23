@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int Ar[100],size,i,sum=0;
+	printf("Enter the size of the array: ");
+	scanf("%d",&size);
+	printf("\nEnter the array elements : ");
+	for(i=0;i<size;i++)
+	{
+		scanf("%d",&Ar[i]);
+		sum+=Ar[i];
+	}
+	printf("\nThe sum of all the elements of the array is: %d",sum);
+	return 0;
+}
