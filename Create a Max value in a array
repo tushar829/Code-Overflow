@@ -1,0 +1,13 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int a[]={45,78,4,46,5487,564};
+    
+    int n=sizeof(a)/sizeof(a[0]);
+    
+    cout<<(*max_element(a,a+n));
+     
+    return 0;
+}
