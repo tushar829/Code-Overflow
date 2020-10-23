@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a[]={1,5,8,-444,999,69};
+    
+    int n=sizeof(a)/sizeof(a[0]);
+    
+    cout<<"MAX ELEMENT IS : "<<(*max_element(a,a+n))<<"\n";
+    
+    cout<<"MIN ELEMENT IS : "<<(*min_element(a,a+n))<<"\n";
+    
+    return 0;
+}  
+
