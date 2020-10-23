@@ -1,0 +1,10 @@
+n=int(input("Enter the no. of terms:"))
+print("Fibonacci series:")
+x=0
+y=1
+for i in range(n):
+    print(x)
+    sum=x+y
+    x=y
+    y=sum
+    
