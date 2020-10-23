@@ -1,0 +1,22 @@
+import java.util.*; 
+  
+public class GFG { 
+    public static void main(String[] args) 
+    { 
+        // Create a list of strings 
+        ArrayList<String> al = new ArrayList<String>(); 
+        al.add("AB 11 "); 
+        al.add("Car"); 
+        al.add("Bike"); 
+        al.add("Football"); 
+        al.add("Travel"); 
+  
+        /* Collections.sort method is sorting the 
+        elements of ArrayList in ascending order. */
+        Collections.sort(al, Collections.reverseOrder()); 
+  
+        // Let us print the sorted list 
+        System.out.println("List after the use of"
+                           + " Collection.sort() :\n" + al); 
+    } 
+} 
