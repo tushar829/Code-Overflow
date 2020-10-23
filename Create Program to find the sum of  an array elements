@@ -1,0 +1,14 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){ 
+    
+    int a[]={454,8987,132,-26,565,999};
+    
+    int n=sizeof(a)/sizeof(a[0]);
+    
+    cout<<(accumulate(a,a+n,0));
+    
+    
+    return 0;
+}  
+
