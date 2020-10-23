@@ -1,0 +1,16 @@
+  
+#include <bits/stdc++.h> 
+using namespace std; 
+
+int largest(int arr[], int n) 
+{ 
+    return *max_element(arr, arr+n); 
+} 
+  
+int main() 
+{ 
+    int arr[] = {6546, -55, 0245,56454, 90, 98979}; 
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    cout << largest(arr, n); 
+    return 0; 
+}
