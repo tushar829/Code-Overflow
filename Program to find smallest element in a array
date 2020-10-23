@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){ 
+    
+    int a[]={454,8987,132,-20,565,999};
+    
+    int n=sizeof(a)/sizeof(a[0]);
+    
+    sort(a,a+n);
+    
+    cout<<(a[0]);
+    
+    
+    return 0;
+}  
+
