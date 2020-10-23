@@ -1,0 +1,28 @@
+
+package brian.kerningam.algo;
+
+import java.util.Scanner;
+
+
+public class BrianKerningamAlgo {
+
+    public static void main(String[] args) {
+
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter a nuumber: ");
+        int n = s.nextInt();
+        System.out.print("Is "+ n + " power of 2? "+check(n));
+    }
+
+    private static boolean check(int n) {
+        if(n==0)
+            return false;
+        
+        if((n&(n-1)) ==0)
+            return true;
+        
+        return false;
+        
+    }
+    
+}
