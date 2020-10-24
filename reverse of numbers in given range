@@ -1,0 +1,30 @@
+
+//Reverse of numbers in a given range
+#include<iostream>
+using namespace std;
+int reverse(int);
+int main()
+{
+    int lower_limit;
+    int upper_limit;
+    cin>>lower_limit;
+    cin>>upper_limit;
+    for(int i=lower_limit;i<upper_limit;i++) {
+        if(i==reverse(i))
+            cout<<i<<" ";
+    }
+    return 0;
+}
+
+int reverse(int n)
+{
+    int a;
+    a = n;
+    int temp=0, result=0;
+    while(a!=0) {
+        temp = a%10;
+        result = result*10 + temp;
+        a = a/10;
+    }
+    return result;
+}
