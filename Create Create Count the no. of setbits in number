@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n , count=0;
+    
+    cout<<"Enter the number\n";
+    
+    cin>>n;
+    
+    while(n){
+        
+        n=n&(n-1);
+        
+        count++;
+    }
+    
+    cout<<"The number has "<<count<<" set bits in it";
+    
+    return 0;
+       
+    
+}  
+
