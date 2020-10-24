@@ -1,0 +1,4 @@
+def reverse_array(array):
+    return array[::-1]
+
+print(reverse_array([1,23,6,2,3,5,3,6,4]))
