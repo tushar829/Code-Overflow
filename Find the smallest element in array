@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Problem to find the smallest element in array</title>
+</head>
+<body>
+    <script>
+    var numbers = [10, 20, 30, 40, 50];
+
+    // Defining function to find the smallest element
+    function findMin(array){
+        return Math.min.apply(null, array);
+    }
+    document.write(findMin(numbers)); 
+    // Output: 10
+    </script>
+</body>
+</html>
