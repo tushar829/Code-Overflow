@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Problem to reverse the array</title>
+</head>
+<body>
+    <script>
+    var fruits = ["apple", "banana", "cherry"];
+    var reversed = fruits.reverse(); 
+    document.write(reversed); // Output: cherry,banana,apple
+    </script>
+</body>
+</html>
