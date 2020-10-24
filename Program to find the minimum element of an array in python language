@@ -1,0 +1,15 @@
+#author = Adarsh Gupta
+#purpose = find the minimum element in array in python
+
+arr = [12, 23, 50, 34, 45]
+
+minimum = arr[0]
+
+length = len(arr)
+
+for i in range(0, length):
+	if arr[i] < minimum:
+		minimum = arr[i]
+		
+print(minimum)
+
