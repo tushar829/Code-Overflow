@@ -1,0 +1,9 @@
+def fibonacci(length): 
+    fib_series = [0, 1]
+    for i in range(2, length):
+        temp = fib_series[i - 1] + fib_series[i - 2]
+        fib_series.append(temp)
+        
+    return fib_series
+
+print(fibonacci(10))
