@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main(){
+   int n,m;
+   int sum,sub,mult,mod;
+   float div;
+   
+   printf("Enter the two numbers:");
+   scanf("%d%d",&n,&m);
+   
+   sum = n + m;
+   sub = n-m;
+   mult = n*m;
+   div = (float)n/m;
+   mod = n%m;
+   
+   printf("sum = %d\n",sum);
+   printf("sub = %d\n",sub);
+   printf("mult = %d\n",mult);
+   printf("div = %f\n",div);
+   printf("mod = %d\n",mod);
+   
+   return 0;
+ }
