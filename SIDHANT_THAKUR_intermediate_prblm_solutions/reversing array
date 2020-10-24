@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int n,temp;
+cout<<"enter the number of elements in an array\n";
+cin>>n;
+int a[n];
+
+cout<<"enter array elements\n";
+
+for(int i=0;i<n;i++)
+cin>>a[i];
+
+cout<<"array elements are\n";
+
+for(int j=0;j<n;j++)
+cout<<a[j]<<"\t";
+
+for(int k=0;k<n/2;k++)
+{
+temp=a[k];
+a[k]=a[n-1-k];
+a[n-1-k]=temp;
+}
+
+cout<<"\nreversed array elements are\n";
+
+for(int l=0;l<n;l++)
+cout<<a[l]<<"\t";
+
+return 0;
+}
