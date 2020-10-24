@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+
+struct stu{
+	int data;
+	struct stu *next;
+};
+
+int main()
+{
+	char ch;		// choice of user
+	
+	struct stu *n_node,*start,*current;
+	start=NULL;
+	
+		   /* creation of link list*/
+	
+	do
+	{
+		
+		n_node=(struct stu *)malloc(sizeof(struct stu));
+		printf("enter the data :: ");
+		scanf("%d",&n_node->data);
+		n_node->next=NULL;
+		if(start == NULL)
+		{
+			start=n_node;
+			current=n_node;
+		}
+		else
+		{
+			current->next=n_node;
+			current=n_node;
+		}
+		printf("enter your choice(y/n) :: ");
+		ch=getch();
+		printf("%c\n",ch);
+	}while(ch!='n');
+	
+	
+	// display of link list entered by user:: 
+	
+	printf("\n\nlink list entered by user is :: \n");
+	
+	current=start;
+	while(current!=NULL)
+	{
+		printf("%d\n",current->data);
+		current=current->next;
+		
+	}
+	
+}
