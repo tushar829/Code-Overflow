@@ -1,0 +1,4 @@
+def find_power(number, power):
+    return number ** power
+
+print(find_power(12, 3))
