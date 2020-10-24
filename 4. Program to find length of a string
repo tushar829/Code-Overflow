@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<html>
+   <head>
+      <title>Problem to find length of a string</title>
+   </head>
+   <body>   
+      <script type = "text/javascript">
+         var str = new String( "This is a new string" );
+         document.write("str.length is:" + str.length); 
+        //string length is 20
+      </script>      
+   </body>
+</html>
