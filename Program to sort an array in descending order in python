@@ -1,0 +1,3 @@
+array = [10, 58, 28, 94, 38, 59, 23]
+array.sort(reverse=True)
+print(array)
