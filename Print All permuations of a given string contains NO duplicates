@@ -1,0 +1,46 @@
+/* Print All permuations of a given string contains NO duplicates 
+Time Complexity O(n*n!)
+Space Complexity O(n) */
+
+#include<bits/stdc++.h>
+using namespace std;
+//global result vector
+vector<string> result;
+
+//swap function 
+void swap(char *a,char *b)
+{
+    char temp;
+    temp=*a;
+    *a=*b;
+    *b=temp;
+}
+//function for generating all permuations of a given string contains NO duplicate
+void permuationUtil(string s,int start, int end){
+   if(start==end){
+       result.push_back(s);
+   }
+   else{
+       for(int i=start;i<=end;i++){
+           swap(s[start],s[i]);
+           permuationUtil(s,start+1,end);
+           swap(s[start],s[i]);
+       }
+   }
+}
+//main function
+int main(){
+	int t;cin>>t;
+	while(t--){
+       
+      string s;cin>>s;
+      permuationUtil(s,0,s.length()-1);
+      
+      for(int i=0;i<result.size();i++){
+          cout<<result[i]<<" ";
+      }
+      result.clear(); //clearing global result vector
+      cout<<endl;
+	}
+	return 0;
+}
