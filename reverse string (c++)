@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main()
+{
+    int i, j, k;
+    char str[100];
+    char rev[100];
+    
+    //Input the string 
+    printf("Enter a string:\t");
+    scanf("%s", str);
+    
+    //Print the original string
+    printf("The original string is %s\n", str);
+    
+    //Reversing a string
+    for(i = 0; str[i] != '\0'; i++);
+    {
+        k = i-1;
+    }
+    for(j = 0; j <= i-1; j++)
+    {
+        rev[j] = str[k];
+        k--;
+    }
+    
+    //print the reversed string
+    printf("The reverse string is %s\n", rev);
+    return 0;
+}
