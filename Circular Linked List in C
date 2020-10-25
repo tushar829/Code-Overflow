@@ -1,0 +1,118 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<process.h>
+
+struct node
+{
+int data;
+struct node * next;
+}
+*head=NULL,*ptr,*ptr1;
+
+void insert_at_beginning()
+{ptr=(struct node *)malloc(sizeof(struct node *));
+printf("Enter value for data of node-> ");
+scanf("%d",&ptr->data);
+if(head==NULL)
+{head=ptr;
+ptr->next=head;}
+else
+{ptr1=head;
+while(ptr1->next!=head)
+ptr1=ptr1->next;
+ptr->next=head;
+ptr1->next=ptr;
+head=ptr; }
+}
+
+void insert_at_end()
+{ptr=(struct node *)malloc(sizeof(struct node *));
+printf("Enter value for data of node-> ");
+scanf("%d",&ptr->data);
+if(head==NULL)
+{ head=ptr;
+ptr->next=head; }
+else
+{ptr1=head;
+while(ptr1->next!=head)
+ptr1=ptr1->next;
+ptr->next=head;
+ptr1->next=ptr;
+} }
+
+void insert_at_position()
+{int pos,count=1;
+printf("Enter position of new data-> ");
+scanf("%d",&pos);
+if(pos==1)
+insert_at_beginning();
+else
+{ptr=(struct node*)malloc(sizeof(struct node*));
+printf("Enter value for data of node-> ");
+scanf("%d",&ptr->data);
+ptr1=head;
+while(count!=pos-1)
+{count++;
+ptr1=ptr1->next; }
+ptr->next=ptr1->next;
+ptr1->next=ptr; }
+}
+
+void delete_at_beginning()
+{if(head==NULL)
+printf("<-Circular Linked list Underflow->");
+else if(head->next==head)
+{ptr1=head;
+ head=NULL;  free(ptr1); }
+else
+{ptr1=head;
+ptr=head;
+while(ptr->next!=head)
+ptr=ptr->next;
+ptr->next=head->next;
+head=head->next;  free(ptr1); }
+}
+
+void delete_at_position()
+{int pos,count=1;
+printf("Enter position to be deleted-> ");
+scanf("%d",&pos);
+if(head==NULL)
+printf("<-Circular Linked list Underflow->");
+else
+{if(pos==1) delete_at_beginning();
+else
+{ptr=head;
+while(count!=pos-1)
+{ptr=ptr->next;
+count++; }
+ptr1=ptr->next;
+ptr->next=ptr1->next; free(ptr1); }
+ } }
+
+void display()
+{ptr=head;
+while(ptr->next!=head)
+{printf("%d->",ptr->data);
+ptr=ptr->next; }
+printf("%d\n",ptr->data);
+}
+
+
+int main()
+{int y;
+printf("________Circular Linked List________\n");
+while(1)
+{printf("1.Insert At Beginning \n2.Insert At End \n3.Insert At Particular Position \n4.Display Circular Linked list \n5.Delete At Beginning \n6.Delete At Particular Position \n7.Exit \nEnter your choice-> ");
+scanf("%d",&y);
+switch(y)
+{case 1 :insert_at_beginning(); break;
+ case 2 :insert_at_end(); break;
+ case 3 :insert_at_position(); break;
+ case 4 :display(); break;
+ case 5 :delete_at_beginning(); break;
+ case 6 :delete_at_position(); break;
+ case 7 :exit(0);
+ default:printf("Wrong Choice Entered\n"); }  }
+ return 0;
+}
