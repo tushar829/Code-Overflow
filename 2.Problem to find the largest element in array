@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Problem to find the largest element in array</title>
+</head>
+<body>
+    <script>
+    var numbers = [10, 20, 30, 40, 50];
+
+    // Defining function to find maximum value
+    function findMax(array){
+        return Math.max.apply(null, array);
+    }
+    document.write(findMax(numbers)); 
+    // Output: 50
+    </script>
+</body>
+</html>
