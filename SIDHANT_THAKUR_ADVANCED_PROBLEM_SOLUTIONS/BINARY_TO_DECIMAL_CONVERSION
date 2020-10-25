@@ -1,0 +1,25 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+int n,t=1,dec=0;
+cout<<"\nenter the number of bits(till 32) of binary number to be converted \n";
+cin>>n;
+cout<<"\nenter binary number to be converted\n";
+cin>>t;
+int i=0;
+int a[n];
+while(t!=0)
+{
+a[i]=t%10;
+i++;
+t=t/10;
+}
+for(int k=0;k<n;k++)
+{
+dec=dec+(pow(2,k)*a[k]);
+}
+cout<<"\ndecimal number is\t"<<dec;
+return 0;
+}
