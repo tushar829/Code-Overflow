@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Problem to count sum of all numbers in an array</title>
+</head>
+<body>
+    <script>
+        var array = [1, 2, 3, 4, 5];
+        var sum = array.reduce(function(a, b){
+            return a + b;
+        }, 0);
+        document.write(sum);//sum:15
+    </script>
+</body>
+</html>
