@@ -1,0 +1,48 @@
+/* Dynamic Programming - Subset Sum Problem
+Time Complexity O(n^2)
+Space Complexity O(n^2) */
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// function to find whether the subset is possible with the given sum
+bool isSubsetSumPossible(int Arr[], int n, int sum){
+    
+   bool dp[n+1][sum+1];
+   
+   for(int i=0;i<=n;i++) dp[i][0]=true; // first column all true, 0 sum always possible
+   for(int i=1;i<=sum;i++) dp[0][i]=false; 
+   
+   for(int i=1;i<=n;i++){
+       for(int j=1;j<=sum;j++){
+            
+            if(j<Arr[i-1]){
+                dp[i][j]=dp[i-1][j];
+            }
+            if(j>=Arr[i-1]){
+                dp[i][j]=dp[i-1][j] || dp[i-1][j-Arr[i-1]];
+            }
+       }
+   }
+   return dp[n][sum];
+   
+}
+//main function
+int main() {
+	
+	int t;cin>>t;
+	while(t--){
+	    int n;cin>>n;
+	    
+	    int Arr[n];
+	    for(int i=0;i<n;i++) cin>>Arr[i];
+	    
+	    int sum;cin>>sum;
+	    
+	    if(isSubsetSumPossible(Arr,n,sum)==true)
+	    cout<<"True"<<endl;
+	    else
+	    cout<<"False"<<endl;
+	}
+	return 0;
+}
