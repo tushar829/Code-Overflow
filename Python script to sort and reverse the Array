@@ -13,3 +13,10 @@ print("The reversed array is: ", rev(arr))
 
 print("Sorted Array is: ", sorted(arr))
 print("Sorted Array in descending order is: ", rev(sorted(arr)))
+
+def descending(lst): 
+    lst.reverse() 
+    return lst 
+      
+lst = [33, 45, 76, 87, 343] 
+print(descending(lst)) 
