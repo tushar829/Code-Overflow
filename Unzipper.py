@@ -2,9 +2,7 @@ import os
 import zipfile
 
 def unzipper():
-
-	#Leave Directory blank if this file is in the same directory as the file you intend to zip
-
+	# Please fill in the directory 
 	directory = input('File/Folder Location: ')
 	if directory == '':
 		pass
