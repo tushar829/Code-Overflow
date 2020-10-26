@@ -1,0 +1,46 @@
+import java.util.*;
+class Solution{
+    public int expression(String tokens){
+        Stack<Integer> stk=new Stack<Integer>();
+        for(int i=0;i<tokens.length();i++){
+            char c=tokens.charAt(i);
+            if(c=='+'){
+                int a=stk.pop();
+                int b=stk.pop();
+                int res=a+b;
+                stk.push(res);
+            }
+            else if(c=='-'){
+                int a=stk.pop();
+                int b=stk.pop();
+                int res=b-a;
+                stk.push(res);
+            }
+            else if(c=='*'){
+                int a=stk.pop();
+                int b=stk.pop();
+                int res=a*b;
+                stk.push(res);
+            }
+            else if(c=='/'){
+                int a=stk.pop();
+                int b=stk.pop();
+                int res=a/b;
+                stk.push(res);
+            }
+            else{
+                int a=c-48;
+                stk.push(a);
+            }
+        }
+        return stk.pop();
+    }
+}
+class postfixevaluationusingstack {
+    public static void main(String args[]){
+        Chetan sc=new Chetan();//creating object of class Solution
+        String s="123*+5-";//232*+9-
+        int b=sc.expression(s);//expression will return int value.
+        System.out.println(b);
+    }
+}
