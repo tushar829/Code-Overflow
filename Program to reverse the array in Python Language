@@ -1,0 +1,3 @@
+array=[5, 9, 18, 29, 38, 44, 58]
+
+print ([num for num in reversed(array)])
