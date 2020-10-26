@@ -1,0 +1,18 @@
+class Overload {
+    void overload(int a,String s){
+        System.out.println(s +" scores "+a);
+    }
+    int overload(int b){
+        System.out.println("value of b is : "+b);
+        return b;
+        
+    }
+}
+class Mainclass{
+    public static void main(String args[]){
+    overloading ov=new overloading();
+    ov.overload(21,"Tushar ");
+    ov.overload(212);
+    
+}
+}
