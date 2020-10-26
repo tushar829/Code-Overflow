@@ -1,0 +1,62 @@
+class Sumarray{
+    private int sum;
+    synchronized int sumArray(int arr[]){
+        sum=0;
+        for(int i=0;i<arr.length;i++){
+            sum+=arr[i];
+            System.out.println("Running Total for "+Thread.currentThread().getName()+" sum is "+sum);
+        }
+        try{
+            Thread.sleep(10);
+        }
+        catch(InterruptedException exc){
+            System.out.println(exc);
+        }
+        return sum;       
+    }
+    void chetan(){
+        System.out.println("Yes");
+    }
+}
+class MyThread implements Runnable{
+    static Sumarray sa=new Sumarray();
+    Thread thrd;
+    int a[] ;
+    int answer;
+    MyThread(String name,int nums[]){
+        thrd=new Thread(this,name);
+        a=nums;
+        thrd.start();
+    }
+    public void run(){
+        int sum;
+        System.out.println("Current thread is  "+thrd.getName());   
+        synchronized(sa){
+        answer=sa.sumArray(a);
+        sa.chetan();
+        }
+        try{
+        thrd.sleep(1000);}
+        catch(InterruptedException exc){
+            System.out.println("hello");
+        }
+        sa.sumArray(a);
+        System.out.println("Sum for "+thrd.getName()+" is "+answer);
+        System.out.println(thrd.getName()+" terminating.");
+    }
+}
+class Sync{
+    public static void main(String args[]){
+        int a[]={1,2,3,4,5};
+        MyThread m1=new MyThread("child#1",a);
+        MyThread m2=new MyThread("child#2",a);
+        try{
+            m1.thrd.join();
+            m2.thrd.join();
+        }
+        catch(InterruptedException exc){
+            System.out.println("tushar");
+        }
+
+    }
+}
