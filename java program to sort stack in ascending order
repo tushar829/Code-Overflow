@@ -1,0 +1,28 @@
+
+
+import java.util.*;
+class Stackasc{
+	public static Stack<Integer> sort(Stack<Integer> stk){
+		Stack<Integer> rstk=new Stack<Integer>();
+		while(!stk.isEmpty()){
+			int tmp=stk.pop();
+			while(!rstk.isEmpty() && rstk.peek()>tmp){
+				stk.push(rstk.pop());	  // 21,11,31,25 .//21,11,
+			}
+			rstk.push(tmp); 	//25,31   //11,25,31
+		}
+		return rstk;
+
+	}
+}
+ class Stackinascendingord{
+	public static void main(String[] args) {
+		Stack<Integer> a=new Stack<Integer>();
+		a.push(21);
+		a.push(11);
+		a.push(31);
+		a.push(25);
+		Stack<Integer> b=Chetanya.sort(a);
+		System.out.println(b);
+	}
+}
