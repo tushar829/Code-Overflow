@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class JavaExample{
+   public static void main(String args[]){
+      int tmp1, tmp2, number1, number2, tmp, hcf, lcm;
+      Scanner scanner = new Scanner(System.in);
+
+      System.out.print("Enter First Number: ");
+      number1 = scanner.nextInt();
+      System.out.print("Enter Second Number: ");
+      number2 = scanner.nextInt();
+      scanner.close();
+
+      tmp1 = number1;
+      tmp2 = number2;
+
+      while(tmp2 != 0){
+         tmp = tmp2;
+         tmp2 = tmp1%tmp2;
+         tmp1 = tmp;
+      }
+
+      hcf = tmp1;
+      lcm = (number1*number2)/hcf;
+
+      System.out.println("HCF of input numbers: "+hcf);
+      System.out.println("LCM of input numbers: "+lcm);
+   }
+}
