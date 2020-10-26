@@ -26,5 +26,4 @@ def List_manipulation():
 
     print()
     input("Press enter to continue :")
-
-List_manipulation()
+    
