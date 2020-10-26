@@ -1,0 +1,22 @@
+import java.util.LinkedList;
+import java.util.Iterator;
+public class AddElement {
+ 
+ public static void main(String[] args) {
+ 
+    LinkedList<String> tushar = new LinkedList<String>();
+ 
+    // Add elements to LinkedList
+    tushar.add("Delhi");
+    tushar.add("Agra");
+    tushar.add("Mysore");
+    tushar.add("Chennai");
+    tushar.add("Pune");
+    tushar.add(4, "NEW ELEMENT");
+    System.out.println("LinkedList elements After Addition:");
+    Iterator it= tushar.iterator();
+    while(it.hasNext()){
+       System.out.println(it.next());
+    }
+ }
+}
