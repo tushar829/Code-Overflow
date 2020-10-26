@@ -1,0 +1,122 @@
+#include<stdlib.h>
+#include<stdio.h>
+#include<conio.h>
+#include<process.h>
+
+struct node
+{int data;
+struct node * next,*prev;
+}*head=NULL,*ptr1,*ptr;
+
+void insert_at_beginning()
+{ptr=(struct node *)malloc(sizeof(struct node *));
+printf("Enter value for data of node-> ");
+scanf("%d",&ptr->data);
+if(head==NULL)
+{head=ptr;
+head->next=NULL;
+head->next=NULL;}
+else{ptr->prev=NULL;
+head->prev=ptr;
+ptr->next=head;
+head=ptr;
+}}
+
+void insert_at_end()
+{ptr=(struct node *)malloc(sizeof(struct node *));
+printf("Enter value for data of node-> ");
+scanf("%d",&ptr->data);
+if(head==NULL)
+{head=ptr;
+ptr->next=NULL;
+ptr->prev=NULL;}
+else{ptr1=head;
+while(ptr1->next!=NULL)
+ptr1=ptr1->next;
+ptr1->next=ptr;
+ptr->prev=ptr1;
+ptr->next=NULL;
+}}
+
+void insert_at_position()
+{int pos,count=1;
+printf("Enter position of new data-> ");
+scanf("%d",&pos);
+if(pos==1)
+insert_at_beginning();
+else {ptr=(struct node*)malloc(sizeof(struct node*));
+printf("Enter value for data of node-> ");
+scanf("%d",&ptr->data);
+ptr1=head;
+while(count!=pos-1)
+{count++;
+ptr1=ptr1->next;}
+ptr1->next->prev=ptr;
+ptr->next=ptr1->next;
+ptr->prev=ptr1;
+ptr1->next=ptr;
+}}
+
+void delete_at_beginning()
+{if(head==NULL)
+printf("Underflow doubly linked list\n");
+else{ptr=head;
+head->next->prev=NULL;
+head=head->next;
+free(ptr);
+}}
+
+void delete_at_end()
+{if(head==NULL)
+printf("Underflow doubly linked list\n");
+else if(head->next==NULL)
+delete_at_beginning();
+else{ptr=head;
+while(ptr->next!=NULL)
+ptr=ptr->next;
+ptr->prev->next=NULL;
+free(ptr);
+}}
+
+void delete_at_position()
+{int pos,count=1;
+printf("Enter position to delete data-> ");
+scanf("%d",&pos);
+if(pos==1)
+delete_at_beginning();
+else{ptr1=head;
+while(count!=pos-1)
+{count++;
+ptr1=ptr1->next; }
+ptr=ptr1->next;
+ptr->next->prev=ptr1;
+ptr1->next=ptr->next;
+free(ptr);
+}}
+
+void display()
+{ptr=head;
+while(ptr->next!=NULL)
+{printf("%d->",ptr->data);
+ptr=ptr->next;   }
+printf("%d\n",ptr->data);
+}
+
+int main()
+{int y;
+printf("________Doubly Linked List________\n");
+while(1)
+{printf("1.Insert At Beginning \n2.Insert At End \n3.Insert At Particular Position \n4.Display Doubly Linked list \n5.Delete At Beginning \n6.Delete At End \n7.Delete At Particular Position \n8.Exit \nEnter your choice-> ");
+scanf("%d",&y);
+switch(y)
+{case 1 :insert_at_beginning(); break;
+ case 2 :insert_at_end(); break;
+ case 3 :insert_at_position(); break;
+ case 4 :display(); break;
+ case 5 :delete_at_beginning(); break;
+ case 6 :delete_at_end(); break;
+ case 7 :delete_at_position(); break;
+ case 8 :exit(0);
+ default:printf("Wrong Choice Entered\n"); }  }
+return 0;
+}
