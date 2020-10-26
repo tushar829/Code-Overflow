@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
+using namespace std;
+#define ll long long int
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    char op;
+    float num1, num2;
+    cout << "Enter operator either + or - or * or /: ";
+    cin >> op;
+    cout << "\nEnter two operands: ";
+    cin >> num1 >> num2;
+    switch(op)
+    {
+        case '+':
+            cout <<"\nResult of " <<num1<<"+"<<num2<< "is: "<<num1+num2;
+            break;
+
+        case '-':
+            cout <<"\nResult of " <<num1<<"-"<<num2<< "is: "<<num1-num2;
+            break;
+
+        case '*':
+            cout <<"\nResult of " <<num1<<"*"<<num2<< "is: "<<num1*num2;
+            break;
+
+        case '/':
+            cout <<"\nResult of " <<num1<<"/"<<num2<< "is: "<<num1/num2;
+            break;
+         case '%':
+            cout <<"\nResult of "<<num1<<" % "<<num2<< "is: "<<num1%num2;
+            break;
+        default:
+            cout<<"\nPlease provide valid input.";
+            break;
+    }
+    return 0;
+}
