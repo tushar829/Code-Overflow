@@ -1,0 +1,27 @@
+class Fibonacci{
+	int firstNumber;
+	int secondNumber;
+	int thirdNumber;
+	Fibonacci(){
+		firstNumber=1;
+		secondNumber=0;
+		thirdNumber=0;
+	}
+	public void generateFibonacci(int limit) {
+		for(int i=0;i<limit;i++) {
+			System.out.println(thirdNumber+"\t");
+			thirdNumber = firstNumber + secondNumber;
+			firstNumber = secondNumber;
+			secondNumber = thirdNumber;
+		}
+	}
+}
+public class FibonacciSeries {
+
+	public static void main(String[] args) {
+		Fibonacci fibonacci =new Fibonacci();
+		fibonacci.generateFibonacci(10);
+
+	}
+
+}
